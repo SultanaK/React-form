@@ -114,7 +114,15 @@ export default class RegistrationForm extends Component {
           <button type="reset" className="registration__button">
               Cancel
           </button>
-          <button type="submit" className="registration__button">
+          <button 
+            type="submit" 
+            className="registration__button"
+            disabled={
+              this.validateName() ||
+              this.validatePassword() ||
+              this.validateRepeatPassword() 
+            }
+          >
               Save
           </button>
         </div>
